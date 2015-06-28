@@ -14,7 +14,7 @@ namespace UnityEngine
         public float x;
         public float y;
 
-        public Vector2(float x, float y) { this.x = x; this.y = y; }
+        public Vector2(float x, float y) : this() { }
 
         public static Vector2 operator -(Vector2 a) { return default(Vector2); }
         public static Vector2 operator -(Vector2 a, Vector2 b) { return default(Vector2); }
