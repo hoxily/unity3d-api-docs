@@ -217,7 +217,25 @@ namespace UnityEngine
         public static string GetNameOfFocusedControl() { return default(string); }
         public static float HorizontalScrollbar(Rect position, float value, float size, float leftValue, float rightValue) { return default(float); }
         public static float HorizontalScrollbar(Rect position, float value, float size, float leftValue, float rightValue, GUIStyle style) { return default(float); }
+        /// <summary>
+        /// 一个水平方向的滑块，用户可以拖动这个滑块来改变一个值，值可以在min与max之间变动。
+        /// </summary>
+        /// <param name="position">该滑块在屏幕上的矩形区域</param>
+        /// <param name="value">滑块当前展示的值。该值决定了那个可拖动的拇指的位置。</param>
+        /// <param name="leftValue">滑块左边界的值</param>
+        /// <param name="rightValue">滑块右边界的值</param>
+        /// <returns>用户设置后的新值</returns>
         public static float HorizontalSlider(Rect position, float value, float leftValue, float rightValue) { return default(float); }
+        /// <summary>
+        /// 一个水平方向的滑块，用户可以拖动这个滑块来改变一个值，值可以在min与max之间变动。
+        /// </summary>
+        /// <param name="position">该滑块在屏幕上的矩形区域</param>
+        /// <param name="value">滑块当前展示的值。该值决定了那个可拖动的拇指的位置。</param>
+        /// <param name="leftValue">滑块左边界的值</param>
+        /// <param name="rightValue">滑块右边界的值</param>
+        /// <param name="slider">用于显示拖动区域的 GUIStyle 。如果留空，那么使用当前 GUISkin 里的 horizontalSlider 样式。</param>
+        /// <param name="thumb">用于显示可拖动拇指的 GUIStyle 。如果留空，那么使用当前 GUISkin 里的 horizontalSliderThumb 样式。</param>
+        /// <returns>用户设置后的新值</returns>
         public static float HorizontalSlider(Rect position, float value, float leftValue, float rightValue, GUIStyle slider, GUIStyle thumb) { return default(float); }
         /// <summary>
         /// 在屏幕创建文本标签或者纹理标签。
@@ -552,7 +570,25 @@ namespace UnityEngine
         public static void UnfocusWindow() { }
         public static float VerticalScrollbar(Rect position, float value, float size, float topValue, float bottomValue) { return default(float); }
         public static float VerticalScrollbar(Rect position, float value, float size, float topValue, float bottomValue, GUIStyle style) { return default(float); }
+        /// <summary>
+        /// 一个垂直方向的滑块，用户可以拖动它来改变一个值，该值在min与max之间变动。
+        /// </summary>
+        /// <param name="position">该滑块在屏幕上的矩形区域</param>
+        /// <param name="value">滑块展示的值。该值决定了可拖动的拇指的位置。</param>
+        /// <param name="topValue">滑块上边界的值</param>
+        /// <param name="bottomValue">滑块下边界的值</param>
+        /// <returns>用户设置后的新值</returns>
         public static float VerticalSlider(Rect position, float value, float topValue, float bottomValue) { return default(float); }
+        /// <summary>
+        /// 一个垂直方向的滑块，用户可以拖动它来改变一个值，该值在min与max之间变动。
+        /// </summary>
+        /// <param name="position">该滑块在屏幕上的矩形区域</param>
+        /// <param name="value">滑块展示的值。该值决定了可拖动的拇指的位置。</param>
+        /// <param name="topValue">滑块上边界的值</param>
+        /// <param name="bottomValue">滑块下边界的值</param>
+        /// <param name="slider">用于显示拖动区域的 GUIStyle 。如果留空，那么使用当前 GUISkin 里的 horizontalSlider 样式。</param>
+        /// <param name="thumb">用于显示可拖动拇指的 GUIStyle 。如果留空，那么使用当前 GUISkin 里的 horizontalSliderThumb 样式。</param>
+        /// <returns>用户设置后的新值</returns>
         public static float VerticalSlider(Rect position, float value, float topValue, float bottomValue, GUIStyle slider, GUIStyle thumb) { return default(float); }
         public static Rect Window(int id, Rect clientRect, GUI.WindowFunction func, GUIContent content) { return default(Rect); }
         public static Rect Window(int id, Rect clientRect, GUI.WindowFunction func, string text) { return default(Rect); }
