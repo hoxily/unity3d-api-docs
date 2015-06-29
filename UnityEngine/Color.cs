@@ -153,7 +153,7 @@
         /// <summary>
         /// 分别使用下标索引0，1，2，3来访问r、g、b、a分量。
         /// </summary>
-        /// <param name="index">0，1，2，3分别对量r、g、b、a分量</param>
+        /// <param name="index">0，1，2，3分别对应r、g、b、a分量</param>
         /// <returns>指定的分量</returns>
         public float this[int index] { get { return default(float); } set { } }
         /// <summary>
