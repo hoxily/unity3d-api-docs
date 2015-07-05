@@ -48,13 +48,13 @@ namespace UnityEngine
         public static float RandomRange(float min, float max) { return default(float); }
         [Obsolete("Use Random.Range instead")]
         public static int RandomRange(int min, int max) { return default(int); }
-        [WrapperlessIcall]
         /// <summary>
         /// 返回一个位于 min（含）到 max（不含）之间的随机浮点数（只读）。
         /// </summary>
         /// <param name="min">所需随机浮点数的下界（含）</param>
         /// <param name="max">所需随机浮点数的上界（不含）</param>
         /// <returns>一个位于 min（含）到 max（不含）之间的随机浮点数。</returns>
+        [WrapperlessIcall]
         public static float Range(float min, float max) { return default(float); }
         /// <summary>
         /// 返回一个位于 min（含）到 max（不含）之间的随机整数（只读）。
