@@ -21,6 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\UnityEngine.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,6 +58,8 @@
     <Compile Include="GameObject.cs" />
     <Compile Include="GUI.cs" />
     <Compile Include="GUIContent.cs" />
+    <Compile Include="GUILayout.cs" />
+    <Compile Include="GUILayoutOption.cs" />
     <Compile Include="GUISettings.cs" />
     <Compile Include="GUISkin.cs" />
     <Compile Include="GUIStyle.cs" />
