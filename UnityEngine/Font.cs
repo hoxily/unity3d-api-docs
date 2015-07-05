@@ -6,7 +6,7 @@ namespace UnityEngine
     /// <summary>
     /// 字体资源的脚本接口。
     /// <para>你可以通过使用此类来动态地切换GUI文本或者文本网格的字体。</para>
-    /// <para>参见：<see cref="GUIText"/>和<seealso cref="TextMesh"/></para>
+    /// <para>参见：GUIText和TextMesh</para>
     /// </summary>
     public sealed class Font : Object
     {
