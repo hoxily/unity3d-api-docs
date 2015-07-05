@@ -10,12 +10,12 @@ namespace UnityEngine
     {
         /// <summary>
         /// 至少有一个接收者接收来自 SendMessage 的消息。
-        /// <para>如果没有找到接收者，那么将会在控制台打印一条错误信息。（这是默认配置。）参见：<seealso cref="GameObject.SendMessage"/></para>
+        /// <para>如果没有找到接收者，那么将会在控制台打印一条错误信息。（这是默认配置。）参见：GameObject.SendMessage</para>
         /// </summary>
         RequireReceiver = 0,
         /// <summary>
         /// 不需要接收者接收来自 SendMessage 的消息。
-        /// <para>即使在 GameObject 上不存在任何实现了指定消息的 Component（脚本），也不会产生错误信息。参见：<seealso cref="GameObject.SendMessage"/></para>
+        /// <para>即使在 GameObject 上不存在任何实现了指定消息的 Component（脚本），也不会产生错误信息。参见：GameObject.SendMessage</para>
         /// </summary>
         DontRequireReceiver = 1,
     }
