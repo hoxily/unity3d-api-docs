@@ -8,7 +8,7 @@ namespace UnityEngine
     /// <para>矩形可以通过两种方式加以指定。第一种方式需要提供左上角坐标以及宽高。这通过x，y，width，height属性实现。</para>
     /// <para>第二种指定矩形的方式为，提供它的左右两边的X坐标以及它的上下两边的Y坐标。通过xMin，xMax，yMin，yMax属性来表示。</para>
     /// <para>尽管x、y属性可能看起来与xMin、xMax一样，实际上它们的行为有些微不同。x与y值被假定与width和height一同使用。这意味着，如果你改变了x或者y而未改变width或者height，那么矩形会改变位置，但保持大小不变。另一方面，如果你改变了xMin或者yMin的值，却没有改变xMax或者yMax，那么这个矩的大小将会改变并且它的左上角位置也会发生变化。</para>
-    /// <para>参见：GUI Scripting Guide, <seealso cref="Camera.rect"/>, <seealso cref="Camera.pixelRect"/>.</para>
+    /// <para>参见：GUI Scripting Guide, Camera.rect, Camera.pixelRect.</para>
     /// </summary>
     public struct Rect
     {
