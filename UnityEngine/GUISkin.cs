@@ -3,6 +3,11 @@ using System.Collections;
 
 namespace UnityEngine
 {
+    /// <summary>
+    /// 定义GUI的样子以及行为。
+    /// <para>GUISkin包含GUI设定和一批GUIStyle对象。</para>
+    /// <para>当前生效GUI皮肤通过GUI.skin读取或者设置。</para>
+    /// </summary>
     [Serializable]
     [ExecuteInEditMode]
     public sealed class GUISkin : ScriptableObject
@@ -32,9 +37,18 @@ namespace UnityEngine
         public GUIStyle verticalSlider { get; set; }
         public GUIStyle verticalSliderThumb { get; set; }
         public GUIStyle window { get; set; }
-
+        /// <summary>
+        /// 尝试查找一个GUIStyle对象。此函数可能返回null而不会给出错误。
+        /// </summary>
+        /// <param name="styleName">所查找的GUIStyle对象的名字</param>
+        /// <returns>如果没有找到返回null</returns>
         public GUIStyle FindStyle(string styleName) { return default(GUIStyle); }
         public IEnumerator GetEnumerator() { return default(IEnumerator); }
+        /// <summary>
+        /// 获取指定名字的GUIStyle对象。
+        /// </summary>
+        /// <param name="styleName">名字</param>
+        /// <returns></returns>
         public GUIStyle GetStyle(string styleName) { return default(GUIStyle); }
     }
 }
