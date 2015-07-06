@@ -190,7 +190,17 @@ namespace UnityEngine
         /// <returns>当用户按下按钮时返回 true</returns>
         public static bool Button(Rect position, Texture image, GUIStyle style) { return default(bool); }
         protected static Vector2 DoBeginScrollView(Rect position, Vector2 scrollPosition, Rect viewRect, bool alwaysShowHorizontal, bool alwaysShowVertical, GUIStyle horizontalScrollbar, GUIStyle verticalScrollbar, GUIStyle background) { return default(Vector2); }
+        /// <summary>
+        /// 让窗口可拖动。
+        /// <para>如果你想要让整个窗口背景作为可拖动区域，那么使用此函数，将此函数插入到WindowFunction的末尾。</para>
+        /// <para>这意味着任何其他控件将会优先，并且拖动仅在鼠标没有焦点才有效。参见：DragWindow，BringWindowToFront，BringWindowToBack.</para>
+        /// </summary>
         public static void DragWindow() { }
+        /// <summary>
+        /// 让窗口可拖动。
+        /// <para>在你的WindowFunction代码里插入对此函数的调用，来让这个窗口可拖动。</para>
+        /// </summary>
+        /// <param name="position">窗口的可拖动区域。此区域会依据实际窗口大小进行剪除。</param>
         public static void DragWindow(Rect position) { }
         [ExcludeFromDocs]
         public static void DrawTexture(Rect position, Texture image) { }
@@ -590,13 +600,80 @@ namespace UnityEngine
         /// <param name="thumb">用于显示可拖动拇指的 GUIStyle 。如果留空，那么使用当前 GUISkin 里的 horizontalSliderThumb 样式。</param>
         /// <returns>用户设置后的新值</returns>
         public static float VerticalSlider(Rect position, float value, float topValue, float bottomValue, GUIStyle slider, GUIStyle thumb) { return default(float); }
+        /// <summary>
+        /// 创建一个弹出式窗口。
+        /// <para>浮动在常规GUI控件之上的窗口，具有点击获取焦点以及可选地可被用户拖动的特性。不像其他控件，你需要传给窗口一个单独的函数，这个函数负责在窗口里渲染GUI控件。</para>
+        /// <para>请注意：如果你正在使用GUILayout在窗口里放置你的组件，那么你应该使用GUILayout.Window。同样的，如果MonoBehaviour.useGUILayout设为false，那么对GUI.Window的调用将会不起作用，尽管它不是一个GUILayout的函数。</para>
+        /// </summary>
+        /// <param name="id">窗口的ID号码（只要是唯一的，它可以是任意值）</param>
+        /// <param name="clientRect">屏幕上的矩形区域，指示了窗口的位置以及大小。</param>
+        /// <param name="func">显示窗口内容的脚本函数</param>
+        /// <param name="content">窗口内渲染的GUIContent</param>
+        /// <returns>屏幕上的矩形区域，指示了窗口的位置以及大小。</returns>
         public static Rect Window(int id, Rect clientRect, GUI.WindowFunction func, GUIContent content) { return default(Rect); }
+        /// <summary>
+        /// 创建一个弹出式窗口。
+        /// <para>浮动在常规GUI控件之上的窗口，具有点击获取焦点以及可选地可被用户拖动的特性。不像其他控件，你需要传给窗口一个单独的函数，这个函数负责在窗口里渲染GUI控件。</para>
+        /// <para>请注意：如果你正在使用GUILayout在窗口里放置你的组件，那么你应该使用GUILayout.Window。同样的，如果MonoBehaviour.useGUILayout设为false，那么对GUI.Window的调用将会不起作用，尽管它不是一个GUILayout的函数。</para>
+        /// </summary>
+        /// <param name="id">窗口的ID号码（只要是唯一的，它可以是任意值）</param>
+        /// <param name="clientRect">屏幕上的矩形区域，指示了窗口的位置以及大小。</param>
+        /// <param name="func">显示窗口内容的脚本函数</param>
+        /// <param name="text">窗口内渲染的文本</param>
+        /// <returns>屏幕上的矩形区域，指示了窗口的位置以及大小。</returns>
         public static Rect Window(int id, Rect clientRect, GUI.WindowFunction func, string text) { return default(Rect); }
+        /// <summary>
+        /// 创建一个弹出式窗口。
+        /// <para>浮动在常规GUI控件之上的窗口，具有点击获取焦点以及可选地可被用户拖动的特性。不像其他控件，你需要传给窗口一个单独的函数，这个函数负责在窗口里渲染GUI控件。</para>
+        /// <para>请注意：如果你正在使用GUILayout在窗口里放置你的组件，那么你应该使用GUILayout.Window。同样的，如果MonoBehaviour.useGUILayout设为false，那么对GUI.Window的调用将会不起作用，尽管它不是一个GUILayout的函数。</para>
+        /// </summary>
+        /// <param name="id">窗口的ID号码（只要是唯一的，它可以是任意值）</param>
+        /// <param name="clientRect">屏幕上的矩形区域，指示了窗口的位置以及大小。</param>
+        /// <param name="func">显示窗口内容的脚本函数</param>
+        /// <param name="image">窗口内渲染的图像</param>
+        /// <returns>屏幕上的矩形区域，指示了窗口的位置以及大小。</returns>
         public static Rect Window(int id, Rect clientRect, GUI.WindowFunction func, Texture image) { return default(Rect); }
+        /// <summary>
+        /// 创建一个弹出式窗口。
+        /// <para>浮动在常规GUI控件之上的窗口，具有点击获取焦点以及可选地可被用户拖动的特性。不像其他控件，你需要传给窗口一个单独的函数，这个函数负责在窗口里渲染GUI控件。</para>
+        /// <para>请注意：如果你正在使用GUILayout在窗口里放置你的组件，那么你应该使用GUILayout.Window。同样的，如果MonoBehaviour.useGUILayout设为false，那么对GUI.Window的调用将会不起作用，尽管它不是一个GUILayout的函数。</para>
+        /// </summary>
+        /// <param name="id">窗口的ID号码（只要是唯一的，它可以是任意值）</param>
+        /// <param name="clientRect">屏幕上的矩形区域，指示了窗口的位置以及大小。</param>
+        /// <param name="func">显示窗口内容的脚本函数</param>
+        /// <param name="title">在窗口的标题栏上显示的文本</param>
+        /// <param name="style">窗口的样式信息</param>
+        /// <returns>屏幕上的矩形区域，指示了窗口的位置以及大小。</returns>
         public static Rect Window(int id, Rect clientRect, GUI.WindowFunction func, GUIContent title, GUIStyle style) { return default(Rect); }
+        /// <summary>
+        /// 创建一个弹出式窗口。
+        /// <para>浮动在常规GUI控件之上的窗口，具有点击获取焦点以及可选地可被用户拖动的特性。不像其他控件，你需要传给窗口一个单独的函数，这个函数负责在窗口里渲染GUI控件。</para>
+        /// <para>请注意：如果你正在使用GUILayout在窗口里放置你的组件，那么你应该使用GUILayout.Window。同样的，如果MonoBehaviour.useGUILayout设为false，那么对GUI.Window的调用将会不起作用，尽管它不是一个GUILayout的函数。</para>
+        /// </summary>
+        /// <param name="id">窗口的ID号码（只要是唯一的，它可以是任意值）</param>
+        /// <param name="clientRect">屏幕上的矩形区域，指示了窗口的位置以及大小。</param>
+        /// <param name="func">显示窗口内容的脚本函数</param>
+        /// <param name="text">窗口内渲染的文本</param>
+        /// <param name="style">窗口的样式信息</param>
+        /// <returns>屏幕上的矩形区域，指示了窗口的位置以及大小。</returns>
         public static Rect Window(int id, Rect clientRect, GUI.WindowFunction func, string text, GUIStyle style) { return default(Rect); }
+        /// <summary>
+        /// 创建一个弹出式窗口。
+        /// <para>浮动在常规GUI控件之上的窗口，具有点击获取焦点以及可选地可被用户拖动的特性。不像其他控件，你需要传给窗口一个单独的函数，这个函数负责在窗口里渲染GUI控件。</para>
+        /// <para>请注意：如果你正在使用GUILayout在窗口里放置你的组件，那么你应该使用GUILayout.Window。同样的，如果MonoBehaviour.useGUILayout设为false，那么对GUI.Window的调用将会不起作用，尽管它不是一个GUILayout的函数。</para>
+        /// </summary>
+        /// <param name="id">窗口的ID号码（只要是唯一的，它可以是任意值）</param>
+        /// <param name="clientRect">屏幕上的矩形区域，指示了窗口的位置以及大小。</param>
+        /// <param name="func">显示窗口内容的脚本函数</param>
+        /// <param name="image">窗口内渲染的图像</param>
+        /// <param name="style">窗口的样式信息</param>
+        /// <returns>屏幕上的矩形区域，指示了窗口的位置以及大小。</returns>
         public static Rect Window(int id, Rect clientRect, GUI.WindowFunction func, Texture image, GUIStyle style) { return default(Rect); }
-
+        /// <summary>
+        /// 在一个窗口里绘制GUI的回调函数（与GUI.Windows配合使用）。
+        /// <para>该函数带有一个要绘制的窗口的ID值的参数。它的函数体应该包含要在窗口上显示的GUI的调用，非常像一个标准的OnGUI函数。然后这个函数就可以作为GUI.Window函数的一个参数，来绘制适当的内容。</para>
+        /// </summary>
+        /// <param name="id">窗口的ID</param>
         public delegate void WindowFunction(int id);
     }
 }
