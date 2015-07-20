@@ -41,16 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccelerationEvent.cs" />
     <Compile Include="AnisotropicFiltering.cs" />
     <Compile Include="Behaviour.cs" />
     <Compile Include="CharacterInfo.cs" />
     <Compile Include="Color.cs" />
     <Compile Include="Color32.cs" />
+    <Compile Include="Compass.cs" />
     <Compile Include="Component.cs" />
     <Compile Include="ComputeBuffer.cs" />
     <Compile Include="ComputeBufferType.cs" />
     <Compile Include="Coroutine.cs" />
     <Compile Include="Debug.cs" />
+    <Compile Include="DeviceOrientation.cs" />
     <Compile Include="ExecuteInEditMode.cs" />
     <Compile Include="FilterMode.cs" />
     <Compile Include="Font.cs" />
@@ -64,8 +67,15 @@
     <Compile Include="GUISkin.cs" />
     <Compile Include="GUIStyle.cs" />
     <Compile Include="GUIStyleState.cs" />
+    <Compile Include="Gyroscope.cs" />
     <Compile Include="ImagePosition.cs" />
+    <Compile Include="IMECompositionMode.cs" />
+    <Compile Include="Input.cs" />
     <Compile Include="Internal\ExcludeFromDocsAttribute.cs" />
+    <Compile Include="KeyCode.cs" />
+    <Compile Include="LocationInfo.cs" />
+    <Compile Include="LocationService.cs" />
+    <Compile Include="LocationServiceStatus.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Matrix4x4.cs" />
     <Compile Include="MonoBehaviour.cs" />
@@ -87,6 +97,8 @@
     <Compile Include="TextureFormat.cs" />
     <Compile Include="TextureWrapMode.cs" />
     <Compile Include="Time.cs" />
+    <Compile Include="Touch.cs" />
+    <Compile Include="TouchPhase.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="Vector3.cs" />
     <Compile Include="Vector4.cs" />
