@@ -63,24 +63,102 @@ namespace UnityEngine
         /// <returns>该轴的值</returns>
         [WrapperlessIcall]
         public static float GetAxisRaw(string axisName) { return default(float); }
+        /// <summary>
+        /// <para>当由buttonName所辨别的虚拟按钮处于按下状态时返回true。</para>
+        /// <para>考虑连发——它会返回true，只要该按钮处于按下状态。</para>
+        /// <para>仅在实现触发动作的事件时使用此函数，例如武器射击。使用GetAxis来控制连续的运动。</para>
+        /// </summary>
+        /// <param name="buttonName">虚拟按钮的名字</param>
+        /// <returns>该虚拟按钮是否处于按下状态</returns>
         [WrapperlessIcall]
         public static bool GetButton(string buttonName) { return default(bool); }
+        /// <summary>
+        /// <para>如果用户在本帧内按下了由buttonName所辨别的虚拟按钮，那么返回true。</para>
+        /// <para>你需要在Update函数内调用此函数，因为每一帧都会重置输入状态。此函数不会返回true，直到用户松开按钮并再次按下。</para>
+        /// <para>仅在实现动作类的事件时使用此函数，例如武器射击。对于任何种类的运动行为，使用Input.GetAxis。</para>
+        /// </summary>
+        /// <param name="buttonName">虚拟按钮的名字</param>
+        /// <returns>用户是否在本帧内按下了由buttonName所辨别的虚拟按钮</returns>
         [WrapperlessIcall]
         public static bool GetButtonDown(string buttonName) { return default(bool); }
+        /// <summary>
+        /// <para>如果处于用户松开由buttonName所辨别的虚拟按钮的第一帧，那么返回true。</para>
+        /// <para>你需要在Update函数内调用此函数，因为每一帧都会重置输入状态。此函数不会返回true，直到用户再一次按下按钮并松开。</para>
+        /// <para>仅在实现动作类的事件时使用此函数，例如武器射击。对于任何种类的运动行为，使用Input.GetAxis。</para>
+        /// </summary>
+        /// <param name="buttonName">虚拟按钮的名字</param>
+        /// <returns>是否处于用户松开由buttonName所辨别的虚拟按钮的第一帧</returns>
         [WrapperlessIcall]
         public static bool GetButtonUp(string buttonName) { return default(bool); }
         [WrapperlessIcall]
         public static string[] GetJoystickNames() { return default(string[]); }
+        /// <summary>
+        /// <para>当由参数key所辨别的按键处于被用户按下状态时返回true。考虑连发。</para>
+        /// <para>当你处理输入时，建议使用Input.GetAxis和Input.GetButton代替，因为它允许终端用户配置按键。</para>
+        /// </summary>
+        /// <param name="key">所按下的键</param>
+        /// <returns>用户是否按下该键</returns>
         public static bool GetKey(KeyCode key) { return default(bool); }
+        /// <summary>
+        /// <para>当由参数key所辨别的按键处于被用户按下状态时返回true。考虑连发。</para>
+        /// <para>按键标识符的清单参见手册中的Input Manager章节。当你处理输入时，建议使用Input.GetAxis和Input.GetButton代替，因为它允许终端用户配置按键。</para>
+        /// </summary>
+        /// <param name="name">所按下的键的标识符</param>
+        /// <returns>用户是否按下该键</returns>
         public static bool GetKey(string name) { return default(bool); }
+        /// <summary>
+        /// <para>如果用户在本帧内按下了由key所辨别的按键，那么返回true。</para>
+        /// <para>你需要在Update函数内调用此函数，因为每一帧都会重置输入状态。此函数不会返回true，直到用户松开按键并再次按下。</para>
+        /// <para>当你处理输入时，建议使用Input.GetAxis和Input.GetButton代替，因为它允许终端用户配置按键。</para>
+        /// </summary>
+        /// <param name="key">所按下的键</param>
+        /// <returns>用户是否按下该键</returns>
         public static bool GetKeyDown(KeyCode key) { return default(bool); }
+        /// <summary>
+        /// <para>如果用户在本帧内按下了由name所辨别的按键，那么返回true。</para>
+        /// <para>你需要在Update函数内调用此函数，因为每一帧都会重置输入状态。此函数不会返回true，直到用户松开按键并再次按下。</para>
+        /// <para>按键标识符的清单参见手册中的Input Manager章节。当你处理输入时，建议使用Input.GetAxis和Input.GetButton代替，因为它允许终端用户配置按键。</para>
+        /// </summary>
+        /// <param name="name">所按下的键的标识符</param>
+        /// <returns>用户是否按下该键</returns>
         public static bool GetKeyDown(string name) { return default(bool); }
+        /// <summary>
+        /// <para>如果用户在本帧内松开了由key所辨别的按键，那么返回true。</para>
+        /// <para>你需要在Update函数内调用此函数，因为每一帧都会重置输入状态。此函数不会返回true，直到用户再次按下按键并松开。</para>
+        /// <para>当你处理输入时，建议使用Input.GetAxis和Input.GetButton代替，因为它允许终端用户配置按键。</para>
+        /// </summary>
+        /// <param name="key">所松开的键</param>
+        /// <returns>用户是否松开该键</returns>
         public static bool GetKeyUp(KeyCode key) { return default(bool); }
+        /// <summary>
+        /// <para>如果用户在本帧内松开了由name所辨别的按键，那么返回true。</para>
+        /// <para>你需要在Update函数内调用此函数，因为每一帧都会重置输入状态。此函数不会返回true，直到用户再次按下按键并松开。</para>
+        /// <para>按键标识符的清单参见手册中的Input Manager章节。当你处理输入时，建议使用Input.GetAxis和Input.GetButton代替，因为它允许终端用户配置按键。</para>
+        /// </summary>
+        /// <param name="name">所松开的键的标识符</param>
+        /// <returns>用户是否松开该键</returns>
         public static bool GetKeyUp(string name) { return default(bool); }
+        /// <summary>
+        /// <para>返回指定的鼠标按钮是否被按住。</para>
+        /// </summary>
+        /// <param name="button">0代表左键，1代表右键，2代表中键。</param>
+        /// <returns>指定的鼠标按钮是否被按住</returns>
         [WrapperlessIcall]
         public static bool GetMouseButton(int button) { return default(bool); }
+        /// <summary>
+        /// <para>如果用户在本帧内按下了指定的鼠标按钮，那么返回true。</para>
+        /// <para>你需要在Update函数内调用此函数，因为每一帧都会重置输入状态。此函数不会返回true，直到用户松开按键并再次按下。</para>
+        /// </summary>
+        /// <param name="button">0代表左键，1代表右键，2代表中键。</param>
+        /// <returns>是否按下指定的鼠标按钮</returns>
         [WrapperlessIcall]
         public static bool GetMouseButtonDown(int button) { return default(bool); }
+        /// <summary>
+        /// <para>如果用户在本帧内松开了指定的鼠标按钮，那么返回true。</para>
+        /// <para>你需要在Update函数内调用此函数，因为每一帧都会重置输入状态。此函数不会返回true，直到用户再一次按下按键并松开。</para>
+        /// </summary>
+        /// <param name="button">0代表左键，1代表右键，2代表中键。</param>
+        /// <returns>是否松开指定的鼠标按钮</returns>
         [WrapperlessIcall]
         public static bool GetMouseButtonUp(int button) { return default(bool); }
         [Obsolete("Use ps3 move API instead", true)]
