@@ -98,12 +98,24 @@ namespace UnityEngine
         /// <para>如果你想要连续地移动一个刚体，请使用 MovePosition 代替。 MovePosition 考虑到了插值。</para>
         /// </summary>
         public Vector3 position { get; set; }
+        /// <summary>
+        /// <para>刚体的旋转。</para>
+        /// <para>Rigidbody.rotation 允许你读取和写入一个正使用着物理引擎的刚体的旋转。如果你通过 Rigidbody.rotation 改变了刚体的旋转，transform 将会在下一次物理模拟步骤时更新。这比利用 Transform.position 更新旋转要快，因为后者会引起所有附加的碰撞器重新计算它们相对于刚体的旋转。</para>
+        /// <para>如果你想要连续地旋转一个刚体，请使用 MoveRotation 代替。 MoveRotation 考虑到了插值。</para>
+        /// </summary>
         public Quaternion rotation { get; set; }
         [Obsolete("The sleepAngularVelocity is no longer supported. Set Use sleepThreshold to specify energy.")]
         public float sleepAngularVelocity { get; set; }
+        /// <summary>
+        /// <para>标准化的质量能量临界值，小于此值时物体开始睡眠。</para>
+        /// </summary>
         public float sleepThreshold { get; set; }
         [Obsolete("The sleepVelocity is no longer supported. Use sleepThreshold. Note that sleepThreshold is energy but not velocity.")]
         public float sleepVelocity { get; set; }
+        /// <summary>
+        /// <para>允许你逐个刚体覆盖求解器迭代计数。</para>
+        /// <para>solverIterationCount 确定关节和接触点如何精确地计算。如果关节刚体有震荡和行为不规律，为 solverIterationCount 设置一个较高的值将改善他们的稳定性。</para>
+        /// </summary>
         public int solverIterationCount { get; set; }
         public bool useConeFriction { get; set; }
         public bool useGravity { get; set; }
