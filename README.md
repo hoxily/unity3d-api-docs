@@ -12,6 +12,8 @@ C# XML Documentation Project for UnityEngine.dll and other libraries.
 例如：
     D:\Program Files\Unity\Editor\Data\Managed
 
+不使用Visual Studio的玩家，可以使用项目根目录下的build.bat批处理脚本来生成dll与xml文件。生成的文件同样是在bin\Debug下。
+
 ## 效果展示
 
 UnityEngine.Debug类的提示：
