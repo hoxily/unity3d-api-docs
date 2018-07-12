@@ -121,6 +121,8 @@
     <Compile Include="WaitForSeconds.cs" />
     <Compile Include="WrapperlessIcall.cs" />
     <Compile Include="YieldInstruction.cs" />
+    <Compile Include="AsyncOperation.cs" />
+    <Compile Include="Scripting\RequiredByNativeCodeAttribute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -141,4 +143,7 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Scripting\" />
+  </ItemGroup>
 </Project>
