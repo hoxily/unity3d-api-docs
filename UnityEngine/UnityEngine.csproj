@@ -143,7 +143,5 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <ItemGroup>
-    <Folder Include="Scripting\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
